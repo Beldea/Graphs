@@ -1,17 +1,22 @@
-public class Nodo {
-    private String nome;
+import java.util.HashMap;
 
-    public Nodo(String nome) {
-        this.nome = nome;
+public class Nodo<T> {
+    private T value;
+    private HashMap<T, Float> adjacencies;
+
+    public Nodo(T v) {
+        this.value = v;
     }
 
-    public String getNome() {
-        return nome;
+    public T getValue() {
+        return value;
     }
 
     @Override
     public String toString() {
-        return nome;
+        String res = "";
+        res += T;
+        return res;
     }
 
     @Override
@@ -21,11 +26,7 @@ public class Nodo {
             return false;
         }
         Nodo altro = (Nodo) key;
-        return nome.equals(altro.nome);
+        return value.equals(altro.value);
     }
 
-    @Override
-    public int hashCode() {
-        return nome.hashCode();
-    }
 }

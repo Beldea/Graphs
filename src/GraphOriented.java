@@ -12,6 +12,7 @@ public class GraphOriented<T> extends Graph<T> {
     }
 
     public HashMap<T, Distance<T>> bellman_ford(T source) {
+        System.out.println();
         return null;
     }
 

@@ -9,5 +9,6 @@ public class Main {
     g.addEdge("A","C",2);
 
     System.out.println(g);
+    g.bellman_ford("A");
     }
 }
