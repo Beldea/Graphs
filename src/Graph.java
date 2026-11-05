@@ -22,15 +22,11 @@ public abstract class Graph<T> {
     public String toString() {
         String res = "";
 
-        for (Map.Entry<T, HashMap<T, Adiacenza>> entry
-                : nodes.entrySet()) {
-
+        for (Map.Entry<T, HashMap<T, Adiacenza>> entry : nodes.entrySet()) {
             res += entry.getKey() + " - [ ";
-
             for (Adiacenza a : entry.getValue().values()) {
                 res += a + " ";
             }
-
             res += "]\n";
         }
 

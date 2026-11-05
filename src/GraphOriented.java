@@ -7,7 +7,7 @@ public class GraphOriented<T> extends Graph<T> {
     public void addEdge(T source, T dest, float weight) {
         addNode(source);
         addNode(dest);
-        nodes.get(source).put(dest, new Adiacenza((Nodo) dest, weight));
+        nodes.get(source).put(dest, new Adiacenza( dest, weight));
     }
 
     public HashMap<T, Distance<T>> bellman_ford(T source) {
