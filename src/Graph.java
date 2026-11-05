@@ -10,6 +10,7 @@ public abstract class Graph<T> {
         nodes = new HashMap<>();
     }
 
+
     public void addNode(T value) {
         if (!nodes.containsKey(value)) {
             nodes.put(value, new HashMap<>());

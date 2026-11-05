@@ -7,6 +7,7 @@ public class Distance<T> {
         this.distance = d;
     }
 
+
     public T getPrev() {
         return prev;
     }
