@@ -1,18 +1,39 @@
+
 import java.util.HashMap;
-public class Graph<T> {
-    protected HashMap<T, Float> nodes;
+import java.util.Map;
+
+public abstract class Graph<T> {
+
+    protected HashMap<T, HashMap<T, Adiacenza>> nodes;
+
+    public Graph() {
+        nodes = new HashMap<>();
+    }
 
     public void addNode(T value) {
         if (!nodes.containsKey(value)) {
-            nodes.put(value, value.);
-            System.out.println("Aggiunto nodo: " + value);
+            nodes.put(value, new HashMap<>());
         }
     }
 
-    public void addEdge(T source, T dest, float weight) {
-        addNode(source);
-        addNode(dest);
-        nodes.get(source).put(dest, new Adiacenza(dest, weight));
-        System.out.println("Aggiunto arco: " + source + " - " + dest + " (peso " + weight + ")");
+    public abstract void addEdge(T source, T dest, float weight);
+
+    @Override
+    public String toString() {
+        String res = "";
+
+        for (Map.Entry<T, HashMap<T, Adiacenza>> entry
+                : nodes.entrySet()) {
+
+            res += entry.getKey() + " - [ ";
+
+            for (Adiacenza a : entry.getValue().values()) {
+                res += a + " ";
+            }
+
+            res += "]\n";
+        }
+
+        return res;
     }
 }
