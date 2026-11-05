@@ -9,7 +9,6 @@ public class GraphNotOriented<T> extends Graph<T> {
         nodes.get(dest).put(source, new Adiacenza(source, weight));
     }
 
-
     public GraphNotOriented<T> kruscal() {
         return null;
     }

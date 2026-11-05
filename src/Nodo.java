@@ -9,7 +9,6 @@ public class Nodo {
         return nome;
     }
 
-
     @Override
     public String toString() {
         return nome;
@@ -21,7 +20,6 @@ public class Nodo {
         if (!(key instanceof Nodo)){
             return false;
         }
-
         Nodo altro = (Nodo) key;
         return nome.equals(altro.nome);
     }
