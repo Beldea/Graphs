@@ -1,10 +1,9 @@
-
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public abstract class Graph<T> {
 
-    protected HashMap<T, HashMap<T, Adiacenza>> nodes;
+    protected HashMap<T, HashMap<T, Adiacenza<T>>> nodes;
 
     public Graph() {
         nodes = new HashMap<>();
@@ -22,10 +21,13 @@ public abstract class Graph<T> {
     public String toString() {
         String res = "";
 
-        for (Map.Entry<T, HashMap<T, Adiacenza>> entry : nodes.entrySet()) {
-            res += entry.getKey() + " - [ ";
-            for (Adiacenza a : entry.getValue().values()) {
-                res += a + " ";
+        ArrayList<T> keys = new ArrayList<>(nodes.keySet());
+        for (int i = 0; i < keys.size(); i++) {
+            T u = keys.get(i);
+            res += u + " - [ ";
+            ArrayList<Adiacenza<T>> adj = new ArrayList<>(nodes.get(u).values());
+            for (int j = 0; j < adj.size(); j++) {
+                res += adj.get(j) + " ";
             }
             res += "]\n";
         }

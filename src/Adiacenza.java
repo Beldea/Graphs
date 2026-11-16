@@ -1,4 +1,3 @@
-
 public class Adiacenza<T> {
 
     private T nodo;

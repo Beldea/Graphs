@@ -2,7 +2,7 @@ public class Distance<T> {
     private T prev;
     private float distance;
 
-    public Distance(T p, float d){
+    public Distance(T p, float d) {
         this.prev = p;
         this.distance = d;
     }
@@ -21,5 +21,10 @@ public class Distance<T> {
 
     public void setDistance(float distance) {
         this.distance = distance;
+    }
+
+    @Override
+    public String toString() {
+        return "(prev = " + prev + ", distance = " + distance + ")";
     }
 }
