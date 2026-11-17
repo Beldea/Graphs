@@ -40,7 +40,7 @@ public class GraphNotOriented<T> extends Graph<T> {
         return n;
     }
 
-    // Albero di copertura minimo (foresta se il grafo non e' connesso)
+    // Albero di copertura minimo ( se il grafo non e' connesso)
     public GraphNotOriented<T> kruskal() {
         ArrayList<T> keys = new ArrayList<>(nodes.keySet());
 
